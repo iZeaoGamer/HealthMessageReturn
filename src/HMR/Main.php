@@ -31,10 +31,10 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             $killer = $event->getEntity()->getLastDamageCause()->getDamager();
             $fizz = new FizzSound($killer);
             $blaze = new BlazeShootSound($player);
-$player->sendMessage(TextFormat::RED.$killer->getName() . TextFormat::GOLD." Killed you with " .TextFormat::LIGHT_PURPLE.$killer->getHealth().TextFormat::RED." hearts left and while using ".TextFormat::BLUE.$killer->getInventory()->getItemInHand()."!");
+$player->sendMessage(TextFormat::LIGHT_PURPLE.$killer->getName() . TextFormat::GOLD." §aKilled you with " .TextFormat::LIGHT_PURPLE.$killer->getHealth().TextFormat::RED." §ahearts left"
 $player->getLevel()->addSound($blaze);
 if($killer instanceof Player) {
- $killer->sendMessage(TextFormat::GREEN."You Killed ".$player->getName()."!");
+ $killer->sendMessage(TextFormat::GREEN."§bYou Killed§3 ".$player->getName()."§b!");
  $killer->getLevel()->addSound($fizz);
 				}
             }
